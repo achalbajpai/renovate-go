@@ -1,0 +1,40 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:base",
+    ":dependencyDashboard"
+  ],
+  "vulnerabilityAlerts": {
+    "enabled": true,
+    "labels": ["security", "vulnerability"],
+    "prCreation": "immediate",
+    "commitMessageSuffix": "[SECURITY]",
+    "branchTopic": "{{{datasource}}}-{{{depNameSanitized}}}-vulnerability",
+    "vulnerabilityFixStrategy": "lowest",
+    "minimumReleaseAge": null,
+    "schedule": [],
+    "dependencyDashboardApproval": false
+  },
+  "golang": {
+    "enabled": true
+  },
+  "packageRules": [
+    {
+      "matchManagers": ["gomod"],
+      "matchUpdateTypes": ["major", "minor", "patch"],
+      "enabled": false
+    },
+    {
+      "matchManagers": ["gomod"],
+      "matchUpdateTypes": ["major", "minor", "patch"],
+      "vulnerabilityAlerts": {
+        "enabled": true
+      },
+      "description": "Enable vulnerability alerts for Go modules despite general Go updates being disabled"
+    }
+  ],
+  "schedule": [
+    "at any time"
+  ],
+  "timezone": "UTC"
+}
