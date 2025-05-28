@@ -83,8 +83,8 @@ The server will be accessible on `http://localhost:8080`.
 
 ## Purpose
 
-Renovate Proposal #7155
+Antrea Renovate Proposal #7155
 
-This project was created for Renovate proposal #7155, which demonstrates usage of Renovate for a Go project with the following requirements:
+This project was created for #7155, which demonstrates usage of Renovate for a Go project.
 
 _The implementation follows Go module layout best practices and intentionally uses Gin v1.6.3 to trigger Renovate's vulnerability detection system._
